@@ -4,11 +4,22 @@
     padding: 0;
 }
 
+/* Mặc định căn lề ra giữa cho hiện thị nội dung - margin */
 .grid.wide {
     max-width: 1200px;
     margin: 0 auto;
 }
 
+.row {
+  /* Nằm cùng 1 hàng và xuống dòng cho cột nếu vượt quá row */
+  display: flex;
+  flex-wrap: wrap; 
+  margin-left: -4px;
+  margin-right: -4px;
+}
+
+
+/* Khi ở chế độ table và màn hình phân giải thấp */
 /* Tablet - PC with low resolution */
 @media (min-width: 740px) and (max-width: 1023px) {
   .wide {
@@ -16,9 +27,30 @@
   }
 }
 
-/* PC with low resolution */
+/* > Table */
+@media (min-width: 740px) {
+  .row {
+    margin-left: -8px;
+    margin-right: -8px;
+  }    
+}
+
+/* PC with low resolution > */
+@media (min-width: 1113px) {
+  .row {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+}
+
+/* > PC with low resolution */
 @media (min-width: 1024px) and (max-width: 1239px) {
   .wide {
     width: 984px;
+  }
+
+  .wide .row {
+    margin-left: -12px;
+    margin-right: -12px;
   }
 }
